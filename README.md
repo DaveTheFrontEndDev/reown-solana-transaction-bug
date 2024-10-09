@@ -26,30 +26,33 @@ Example: _1st example on page when you run `yarn dev`_
 
 * * *
 
-Bug 1) useDisconnect Issue
+Bug 1) `useAppKitProvider` returning `walletProvider` as undefined when a solana wallet is connected
 -------------------
 
-useAppKit 'open' connection hook works, but solana disconnection hook does not disconnect the wallet  
+When trying to interact with solana program per documentation [here (smart contract interaction)](https://docs.reown.com/appkit/react/core/installation?platform=solana), Issues encountered:
   
-Example: _2nd example on page when you run `yarn dev`_
+   When using the code example:  
+
+```
+    const { address, currentChain } = useAppKitAccount();  
+    const { walletProvider, connection } = useAppKitProvider();  
+```
+      
+**walletProvider** is still `undefined` when a phantom wallet is connected
   
 
 * * *
 
-Bug 2) Solana program interaction
+Bug 2) `useAppKitProvider` not exporting `connection` as documented in reown documentation
 --------------------------
 
 When trying to interact with solana program per documentation [here (smart contract interaction)](https://docs.reown.com/appkit/react/core/installation?platform=solana), Issues encountered:
-
-*   The documented [github code example](https://github.com/reown-com/web-examples/blob/main/dapps/web3modal/react-solana/src/App.tsx) uses old web3modal library, so besides the documentation snipits there are no replicatable examples that work:
   
-*   When using the code example:  
-      
+   When using the code example:  
+
+```
     const { address, currentChain } = useAppKitAccount();  
     const { walletProvider, connection } = useAppKitProvider();  
+```
       
-    **connection** is not exported from useAppKitProvider, I did however find an undocumented hook called `useAppKitConnection` that appears to return this.  
-    **walletProvider** is undefined when a wallet is connected
-
-  
-Example: _3rd example on page when you run `yarn dev`_
+**connection** is not exported from useAppKitProvider, I did however find an undocumented hook called `useAppKitConnection` that appears to return this. 
