@@ -29,6 +29,8 @@ Example: _1st example on page when you run `yarn dev`_
 Bug 1) `useAppKitProvider` returning `walletProvider` as undefined when a solana wallet is connected
 -------------------
 
+[Issue reported - 3043](https://github.com/reown-com/appkit/issues/3043)
+
 When trying to interact with solana program per documentation [here (smart contract interaction)](https://docs.reown.com/appkit/react/core/installation?platform=solana), Issues encountered:
   
    When using the code example:  
@@ -45,6 +47,8 @@ When trying to interact with solana program per documentation [here (smart contr
 
 Bug 2) `useAppKitProvider` not exporting `connection` as documented in reown documentation
 --------------------------
+
+[Issue reported - 3042](https://github.com/reown-com/appkit/issues/3042)
 
 When trying to interact with solana program per documentation [here (smart contract interaction)](https://docs.reown.com/appkit/react/core/installation?platform=solana), Issues encountered:
   
